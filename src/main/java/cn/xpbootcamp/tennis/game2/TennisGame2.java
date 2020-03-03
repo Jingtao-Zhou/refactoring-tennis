@@ -9,9 +9,6 @@ public class TennisGame2 implements TennisGame {
     private int player1Score = 0;
     private int player2Score = 0;
 
-    private String player1Result = "";
-    private String player2Result = "";
-
     public TennisGame2() {
     }
 
@@ -21,6 +18,8 @@ public class TennisGame2 implements TennisGame {
             score = DeuceScoreMap.getResult(player1Score);
         }
 
+        String player1Result;
+        String player2Result;
         if (player1Score > 0 && player1Score < 4 && player2Score == 0) {
             player1Result = NotEqualLowScoreMap.getResult(player1Score);
             player2Result = "Love";

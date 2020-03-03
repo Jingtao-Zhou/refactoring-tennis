@@ -15,7 +15,7 @@ import static org.junit.Assert.assertEquals;
 
 class TennisGameTest {
 
-    public static Stream<List> getAllScores() {
+    static Stream<List> getAllScores() {
         return Stream.of(
                 Arrays.asList(0, 0, "Love-All"),
                 Arrays.asList(1, 1, "Fifteen-All"),
@@ -59,26 +59,26 @@ class TennisGameTest {
 
     @ParameterizedTest
     @MethodSource("getAllScores")
-    public void checkAllScoresTennisGame1(List<Object> params) {
+    void checkAllScoresTennisGame1(List<Object> params) {
         TennisGame1 game = new TennisGame1("player1", "player2");
         checkAllScores(params, game);
     }
 
     @ParameterizedTest
     @MethodSource("getAllScores")
-    public void checkAllScoresTennisGame2(List<Object> params) {
+    void checkAllScoresTennisGame2(List<Object> params) {
         TennisGame2 game = new TennisGame2("player1", "player2");
         checkAllScores(params, game);
     }
 
     @ParameterizedTest
     @MethodSource("getAllScores")
-    public void checkAllScoresTennisGame3(List<Object> params) {
+    void checkAllScoresTennisGame3(List<Object> params) {
         TennisGame3 game = new TennisGame3("player1", "player2");
         checkAllScores(params, game);
     }
 
-    public void checkAllScores(List<Object> params, TennisGame game) {
+    void checkAllScores(List<Object> params, TennisGame game) {
         int player1Score = (int) params.get(0);
         int player2Score = (int) params.get(1);
         String expectedScore = (String) params.get(2);

@@ -89,8 +89,8 @@ public class TennisGame2 implements TennisGame {
         return score;
     }
 
-    public void wonPoint(String player) {
-        if (player == "player1")
+    public void wonPoint(String playerName) {
+        if ("player1".equals(playerName))
             player1Score++;
         else
             player2Score++;

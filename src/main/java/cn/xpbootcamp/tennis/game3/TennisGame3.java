@@ -17,8 +17,7 @@ public class TennisGame3 implements TennisGame {
 
     public String getScore() {
         String result;
-        if (player1Score < 4 && player2Score < 4 && !(player1Score + player2Score == 6)) {
-
+        if (bothScoreIsTooLowToGetWinner()) {
             result = resultsMap[player1Score];
             return (player1Score == player2Score) ? result + "-All" : result + "-" + resultsMap[player2Score];
         } else {
@@ -35,6 +34,10 @@ public class TennisGame3 implements TennisGame {
         else
             this.player2Score += 1;
 
+    }
+
+    private boolean bothScoreIsTooLowToGetWinner() {
+        return player1Score < 4 && player2Score < 4 && !(player1Score + player2Score == 6);
     }
 
 }
